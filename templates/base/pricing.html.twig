@@ -1,0 +1,133 @@
+{% block title %} Pricing {% endblock %}
+{% extends 'base.html.twig' %}
+{% block body %}
+    <section class="py-5 mt-5">
+        <div class="container py-5">
+            <div class="row mb-5">
+                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                    <h2 class="fw-bold">Pricing</h2>
+                    <p class="text-muted w-lg-50">Subscribe to the PREMIUM offer which is a subscription per store, you
+                        will have advantages also for the free stores but less advanced than yours.</p>
+                </div>
+            </div>
+            <div class="row g-0 row-cols-1 row-cols-md-2 row-cols-xl-3 d-flex align-items-md-center align-items-xl-center">
+                <div class="col offset-xl-2 mb-4">
+                    <div class="card bg-light border-light">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h3 class="fw-bold mb-0">FREE</h3>
+                                    <p>Use for free and customize as you wish</p>
+                                    <h4 class="display-4 fw-bold">0€</h4>
+                                </div>
+                            </div>
+                            <div>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex mb-2"><span
+                                                class="bs-icon-xs bs-icon-rounded bs-icon-success-light bs-icon bs-icon-xs me-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                 fill="currentColor" viewBox="0 0 16 16"
+                                                 class="bi bi-check-lg text-success">
+                                                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+                                            </svg>
+                                        </span>
+                                        <span>Teams <strong>(10 users)</strong> and user permissions.</span>
+                                    </li>
+                                    <li class="d-flex mb-2">
+                                        <span class="bs-icon-xs bs-icon-rounded bs-icon-success-light bs-icon bs-icon-xs me-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                 fill="currentColor" viewBox="0 0 16 16"
+                                                 class="bi bi-check-lg text-success">
+                                                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+                                            </svg>
+                                        </span>
+                                        <span>Themes and color customization.</span>
+                                    </li>
+                                    <li class="d-flex mb-2">
+                                        <span class="bs-icon-xs bs-icon-rounded bs-icon-success-light bs-icon bs-icon-xs me-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                 fill="currentColor" class="bi bi-x text-success" viewBox="0 0 16 16">
+                                              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                            </svg>
+                                        </span>
+                                        <span>Blog and newsletter.</span>
+                                    </li>
+                                    <li class="d-flex mb-2">
+                                        <span class="bs-icon-xs bs-icon-rounded bs-icon-success-light bs-icon bs-icon-xs me-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                 fill="currentColor" class="bi bi-x text-success" viewBox="0 0 16 16">
+                                              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                            </svg>
+                                        </span>
+                                        <span>Customizable store link.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-success d-block w-100" type="button">Create an account</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card textwhite bg-success text-white">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <h3 class="fw-bold text-white mb-0">Premium</h3>
+                                    <p>All the FREE content, but with additional adjustments</p>
+                                    <h4 class="display-4 fw-bold text-white">4.99€</h4>
+                                </div>
+                                <div>
+                                    <span class="badge rounded-pill bg-success text-uppercase bg-semi-white">Monthly</span>
+                                </div>
+                            </div>
+                            <div>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex mb-2">
+                                        <span class="bs-icon-xs bs-icon-rounded bs-icon-semi-white bs-icon bs-icon-xs me-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                 fill="currentColor" viewBox="0 0 16 16"
+                                                 class="bi bi-check-lg text-success">
+                                                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+                                            </svg>
+                                        </span>
+                                        <span>Teams <strong>(20 users)</strong> and user permissions.</span></li>
+                                    <li class="d-flex mb-2">
+                                        <span class="bs-icon-xs bs-icon-rounded bs-icon-semi-white bs-icon bs-icon-xs me-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                 fill="currentColor" viewBox="0 0 16 16"
+                                                 class="bi bi-check-lg text-success">
+                                                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+                                            </svg>
+                                        </span>
+                                        <span>Themes and color customization.</span>
+                                    </li>
+                                    <li class="d-flex mb-2">
+                                        <span class="bs-icon-xs bs-icon-rounded bs-icon-semi-white bs-icon bs-icon-xs me-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                 fill="currentColor" viewBox="0 0 16 16"
+                                                 class="bi bi-check-lg text-success">
+                                                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+                                            </svg>
+                                        </span>
+                                        <span>Blog and newsletter.</span>
+                                    </li>
+                                    <li class="d-flex mb-2">
+                                        <span class="bs-icon-xs bs-icon-rounded bs-icon-semi-white bs-icon bs-icon-xs me-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                                 fill="currentColor" viewBox="0 0 16 16"
+                                                 class="bi bi-check-lg text-success">
+                                                <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+                                            </svg>
+                                        </span>
+                                        <span>Customizable store link.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-success d-block w-100 bg-semi-white" type="button">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,40 @@
+.floating {
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+@media only screen and (max-width: 500px) {
+    img.floating {
+        opacity: 20%;
+        margin-left: -0px;
+        margin-bottom: -250px;
+    }
+}
+
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }
+}
+
+@keyframes wheelHueColor {
+    from, to { color: hsl(207, 45%, 36%); }
+    10%      { color: hsl(207, 40%, 41%); }
+    20%      { color: hsl(207, 35%, 40%); }
+    30%      { color: hsl(206, 55%, 61%); }
+    40%      { color: hsl(206, 30%, 45%); }
+    50%      { color: hsl(207, 25%, 43%); }
+    60%      { color: hsl(206, 27%, 30%); }
+    70%      { color: hsl(207, 50%, 43%); }
+    80%      { color: hsl(207, 58%, 35%); }
+    90%      { color: hsl(207, 57%, 22%); }
+}
+
+.bucketColors {
+    color: hsl(324, 70%, 45%);
+    animation: wheelHueColor 3s infinite;
+}
