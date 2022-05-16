@@ -34,4 +34,13 @@ class DefaultController extends AbstractController {
 			"current_page" => "contact"
 		]);
 	}
+
+	/**
+	 * @Route("/blog", name="blog")
+	 */
+	public function blog() : Response {
+		return $this->render('base/blog.html.twig', [
+			"current_page" => "blog"
+		]);
+	}
 }

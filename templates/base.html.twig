@@ -49,6 +49,9 @@
                 <li class="nav-item"><a
                             class="nav-link {% if current_page is defined and current_page == "contact" %} active {% endif %}"
                             href="{{ path('contact') }}">Contact</a></li>
+                <li class="nav-item"><a
+                            class="nav-link {% if current_page is defined and current_page == "blog" %} active {% endif %}"
+                            href="{{ path('blog') }}">Blog</a></li>
             </ul>
             <a class="btn btn-outline-dark shadow" role="button" style="border-radius: 10px" href="#">Sign up</a>
         </div>
@@ -68,12 +71,13 @@
                 <form class="d-flex justify-content-center flex-wrap flex-lg-nowrap" method="post">
                     <div class="my-2">
                         <label>
-                            <input class="border shadow-sm form-control" style="border-radius: 10px" type="email" name="email"
+                            <input class="border shadow-sm form-control" style="border-radius: 10px" type="email"
+                                   name="email"
                                    placeholder="Your Email">
                         </label>
                     </div>
                     <div class="my-2">
-                        <button class="btn btn-primary shadow ms-2" style="border-radius: 10px" type="submit">
+                        <button class="btn btn-dark shadow ms-2" style="border-radius: 10px" type="submit">
                             Subscribe
                         </button>
                     </div>
