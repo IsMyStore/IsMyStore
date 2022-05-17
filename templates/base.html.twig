@@ -40,20 +40,21 @@
 
         <div class="collapse navbar-collapse" id="navcol-1">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item"><a
-                            class="nav-link {% if current_page is defined and current_page == "default" %} active {% endif %}"
-                            href="{{ path('home') }}">Home</a></li>
-                <li class="nav-item"><a
-                            class="nav-link {% if current_page is defined and current_page == "pricing" %} active {% endif %}"
-                            href="{{ path('pricing') }}">Pricing</a></li>
-                <li class="nav-item"><a
-                            class="nav-link {% if current_page is defined and current_page == "contact" %} active {% endif %}"
-                            href="{{ path('contact') }}">Contact</a></li>
-                <li class="nav-item"><a
-                            class="nav-link {% if current_page is defined and current_page == "blog" %} active {% endif %}"
-                            href="{{ path('blog') }}">Blog</a></li>
+                <li class="nav-item">
+                    <a class="nav-link {% if current_page is defined and current_page == "default" %} active {% endif %}" href="{{ path('home') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if current_page is defined and current_page == "pricing" %} active {% endif %}" href="{{ path('pricing') }}">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if current_page is defined and current_page == "contact" %} active {% endif %}" href="{{ path('contact') }}">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if current_page is defined and current_page == "blog" %} active {% endif %}"
+                       href="{{ path('blog') }}">Blog</a>
+                </li>
             </ul>
-            <a class="btn btn-outline-dark shadow" role="button" style="border-radius: 10px" href="#">Sign up</a>
+            <a class="btn {% if current_page is defined and current_page == "register" %}btn-dark{% else %}btn-outline-dark{% endif %} shadow" role="button" style="border-radius: 10px" href="{{ path('app_register') }}">Sign up</a>
         </div>
     </div>
 </nav>
