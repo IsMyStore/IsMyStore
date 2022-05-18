@@ -19,7 +19,8 @@
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
 
-        <link rel="stylesheet" href="{{ asset('assets/ismystore/default.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/default.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/ismystore.css') }}">
     {% endblock %}
 
     {% block javascripts %}
@@ -41,20 +42,28 @@
         <div class="collapse navbar-collapse" id="navcol-1">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link {% if current_page is defined and current_page == "default" %} active {% endif %}" href="{{ path('home') }}">Home</a>
+                    <a class="nav-link {% if current_page is defined and current_page == "default" %} active {% endif %}"
+                       href="{{ path('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if current_page is defined and current_page == "pricing" %} active {% endif %}" href="{{ path('pricing') }}">Pricing</a>
+                    <a class="nav-link {% if current_page is defined and current_page == "pricing" %} active {% endif %}"
+                       href="{{ path('pricing') }}">Pricing</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {% if current_page is defined and current_page == "contact" %} active {% endif %}" href="{{ path('contact') }}">Contact</a>
+                    <a class="nav-link {% if current_page is defined and current_page == "contact" %} active {% endif %}"
+                       href="{{ path('contact') }}">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {% if current_page is defined and current_page == "blog" %} active {% endif %}"
                        href="{{ path('blog') }}">Blog</a>
                 </li>
             </ul>
-            <a class="btn {% if current_page is defined and current_page == "register" %}btn-dark{% else %}btn-outline-dark{% endif %} shadow" role="button" style="border-radius: 10px" href="{{ path('app_register') }}">Sign up</a>
+            {% if(app.user) %}
+                <a class="btn btn-outline-dark shadow" role="button" style="border-radius: 10px" href="#">Dashboard</a>
+            {% else %}
+                <a class="btn {% if current_page is defined and current_page == "login" %}btn-dark{% else %}btn-outline-dark{% endif %} shadow"
+                   role="button" style="border-radius: 10px" href="{{ path('app_login') }}">Sign in</a>
+            {% endif %}
         </div>
     </div>
 </nav>
@@ -87,6 +96,7 @@
         </div>
     </section>
 {% endif %}
+
 <footer class="bg-primary-gradient">
     <div class="container py-4 py-lg-5">
         <div class="row justify-content-center">
@@ -130,9 +140,9 @@
     </div>
 </footer>
 
-    <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/bootstrap/js/theme.js') }}"></script>
-    <script src="{{ asset('assets/bootstrap/js/bs-init.js') }}"></script>
-    <script src="{{ asset('assets/bootstrap/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/bootstrap/js/theme.js') }}"></script>
+<script src="{{ asset('assets/bootstrap/js/bs-init.js') }}"></script>
+<script src="{{ asset('assets/bootstrap/js/jquery.min.js') }}"></script>
 </body>
 </html>
