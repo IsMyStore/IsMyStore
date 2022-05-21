@@ -22,6 +22,10 @@ class RegistrationController extends AbstractController {
 
 		if ($form->isSubmitted() && $form->isValid()) {
 			// encode the plain password
+
+			$user->setFirstName($form->get('first_name')->getData());
+			$user->setLastName($form->get('last_name')->getData());
+
 			$user->setPassword(
 				$userPasswordHasher->hashPassword(
 					$user,
@@ -29,8 +33,7 @@ class RegistrationController extends AbstractController {
 				)
 			);
 
-			$user->setFirstName("John");
-			$user->setLastName("Doe");
+			$user->setLocation($form->get('location')->getData());
 
 			$entityManager->persist($user);
 			$entityManager->flush();

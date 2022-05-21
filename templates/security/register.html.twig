@@ -26,17 +26,29 @@
                                     </div>
                                 </div>
 
-                                <div class="mb-3">
-                                    {{ form_row(registrationForm.email) }}
-                                <div class="mb-3">
-                                    {{ form_row(registrationForm.plainPassword) }}
+                                <div class="row">
+                                    <div class="col">
+                                        {{ form_row(registrationForm.email) }}
+                                    </div>
+                                    <div class="col">
+                                        {{ form_row(registrationForm.location) }}
+                                    </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <button class="btn btn-primary shadow d-block w-100" type="submit">Sign up</button>
-                                </div>
-                                <p class="text-muted">Already have an account?&nbsp;<a href="{{ path('app_login') }}">Log in</a></p>
-                                {{ form_end(registrationForm) }}
+                                    <div class="mb-3">
+                                        {{ form_row(registrationForm.plainPassword) }}
+                                    </div>
+                                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                                    <div class="mb-3">
+                                        <button class="btn btn-primary  shadow d-block w-100" type="submit">
+                                            Sign up
+                                        </button>
+                                    </div>
+                                    <p class="text-muted">Already have an account?
+                                        &nbsp;<a href="{{ path('app_login') }}">Log in</a></p>
+                                    {{ form_end(registrationForm) }}
                             </form>
                         </div>
                     </div>

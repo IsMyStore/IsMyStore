@@ -1,0 +1,39 @@
+<nav class="navbar navbar-light navbar-expand-md fixed-top navbar-shrink py-3" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="{{ path('home') }}">
+            <img src="{{ asset('assets/ismystore.png') }}" alt="IsMyStore" class="img-fluid" height="200px"
+                 width="200px">
+        </a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+            <span class="visually-hidden">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link {% if current_page is defined and current_page == "default" %} active {% endif %}"
+                       href="{{ path('home') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if current_page is defined and current_page == "pricing" %} active {% endif %}"
+                       href="{{ path('pricing') }}">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if current_page is defined and current_page == "contact" %} active {% endif %}"
+                       href="{{ path('contact') }}">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if current_page is defined and current_page == "blog" %} active {% endif %}"
+                       href="{{ path('blog') }}">Blog</a>
+                </li>
+            </ul>
+            {% if(app.user) %}
+                <a class="btn btn-outline-dark" role="button" style="border-radius: 10px" href="{{ path('app_user_profile') }}">Dashboard</a>
+            {% else %}
+                <a class="btn {% if current_page is defined and current_page == "login" %}btn-dark{% else %}btn-outline-dark{% endif %}"
+                   role="button" style="border-radius: 10px" href="{{ path('app_login') }}">Sign in</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>

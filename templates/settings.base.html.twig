@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings ・ {% block title %}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/ismystore.ico') }}"/>
+
+    <!-- Imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+
+        <link rel="stylesheet" href="{{ asset('assets/css/default.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/ismystore.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/settings.css') }}">
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+
+{% include 'modules/_navbar.html.twig' %}
+
+<section class="py-1 mt-1">
+    <div class="container py-5">
+        <div class="container-xl px-4 mt-4">
+            <!-- Account page navigation-->
+            <nav class="nav nav-borders">
+                <a class="nav-link {% if current_page is defined and current_page == "profile" %}active{% endif %} ms-0"
+                   href="https://www.bootdey.com/snippets/view/bs5-edit-profile-account-details" target="__blank">Profile</a>
+                <a class="nav-link {% if current_page is defined and current_page == "store" %}active{% endif %}" href="https://www.bootdey.com/snippets/view/bs5-edit-notifications-page"
+                   target="__blank">Store</a>
+                <a class="nav-link {% if current_page is defined and current_page == "billing" %}active{% endif %}" href="https://www.bootdey.com/snippets/view/bs5-profile-billing-page"
+                target="__blank">Billing</a>
+                <a class="nav-link {% if current_page is defined and current_page == "security" %}active{% endif %}" href="https://www.bootdey.com/snippets/view/bs5-profile-security-page"
+                target="__blank">Security</a>
+                <a class="nav-link {% if current_page is defined and current_page == "notifications" %}active{% endif %}" href="https://www.bootdey.com/snippets/view/bs5-edit-notifications-page"
+                target="__blank">Notifications</a>
+            </nav>
+            <hr class="mt-0 mb-4">
+            <div class="row">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include 'modules/_footer.html.twig' %}
+
+</body>
+</html>

@@ -30,10 +30,14 @@
                                 -->
 
                                 <div class="mb-3">
-                                    <input type="email" value="{{ last_username }}" name="email" placeholder="Email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                                    <label for="inputEmail">
+                                        <input type="email" value="{{ last_username }}" name="email" placeholder="Email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                                    </label>
                                 </div>
                                 <div class="mb-3">
-                                    <input type="password" name="password" placeholder="Password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                                    <label for="inputPassword">
+                                        <input type="password" name="password" placeholder="Password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                                    </label>
                                 </div>
                                 <div class="checkbox mb-3">
                                     <label for="rememberme">
@@ -44,7 +48,9 @@
                                 <div class="mb-3">
                                     <button class="btn btn-primary shadow d-block w-100" type="submit">Sign in</button>
                                 </div>
-                                <p class="text-muted">You've forgot your password?</p>
+                                <p class="text-muted">
+                                    <a href="{{ path('app_forgot_password_request') }}">You've forgot your password?</a>
+                                </p>
                             </form>
                         </div>
                     </div>
