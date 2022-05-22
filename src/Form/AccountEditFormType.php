@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\User;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
@@ -40,12 +41,8 @@ class AccountEditFormType extends AbstractType {
 					'placeholder' => 'Doe Entreprise'
 				]
 			])
-			->add('location', TextType::class, [
-				'label' => false,
-				'required' => false,
-				'attr' => [
-					'placeholder' => 'Nevada'
-				]
+			->add('location', CountryType::class, [
+				'data' => 'FR',
 			])
 			->add('email', EmailType::class, [
 				'label' => false,

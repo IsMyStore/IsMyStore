@@ -17,7 +17,8 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 class RegistrationFormType extends AbstractType {
 
 	public function buildForm(FormBuilderInterface $builder, array $options): void {
-		$checkIP = new CheckIP($_SERVER['REMOTE_ADDR']);;
+		$checkIP = new CheckIP($_SERVER['REMOTE_ADDR']);
+
 		$builder
 			->add("firstName",TextType::class,[
 				'label' => false,
