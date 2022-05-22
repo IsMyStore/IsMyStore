@@ -14,10 +14,6 @@
     font-weight: 500;
 }
 
-.card-header:first-child {
-    border-radius: 0.35rem 0.35rem 0 0;
-}
-
 .card-header {
     padding: 1rem 1.35rem;
     margin-bottom: 0;
