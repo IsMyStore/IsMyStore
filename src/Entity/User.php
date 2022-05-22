@@ -10,53 +10,57 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface {
 
 	#[ORM\Id]
-	#[ORM\GeneratedValue]
-	#[ORM\Column(type: 'integer')]
-	private $id;
+            	#[ORM\GeneratedValue]
+            	#[ORM\Column(type: 'integer')]
+            	private $id;
 
 	#[ORM\Column(type: 'string', length: 180, unique: true)]
-	private $email;
+            	private $email;
 
 	#[ORM\Column(type: 'json')]
-	private $roles = [];
+            	private $roles = [];
 
 	#[ORM\Column(type: 'string')]
-	private $password;
+            	private $password;
 
 	#[ORM\Column(type: 'string', length: 255)]
-	private $first_name;
+            	private $first_name;
 
 	#[ORM\Column(type: 'string', length: 255)]
-	private $last_name;
+            	private $last_name;
 
 	#[ORM\Column(type: 'string', length: 255, nullable: true)]
-	private $organization_name;
+            	private $organization_name;
 
 	#[ORM\Column(type: 'string', length: 255)]
-	private $location;
+            	private $location;
 
 	#[ORM\Column(type: 'string', length: 255, nullable: true)]
-	private $phone_number;
+            	private $phone_number;
 
 	#[ORM\Column(type: 'string', length: 255, nullable: true)]
-	private $username;
+            	private $username;
+
+    #[ORM\Column(type: 'boolean')]
+    private $isVerified = false;
 
 	public function getId(): ?int {
-		return $this->id;
-	}
+            		return $this->id;
+            	}
 
 	public function getEmail(): ?string {
-		return $this->email;
-	}
+            		return $this->email;
+            	}
 
 	public function setEmail(string $email): self {
-		$this->email = $email;
-
-		return $this;
-	}
+            		$this->email = $email;
+            
+            		return $this;
+            	}
 
 	/**
 	 * A visual identifier that represents this user.
@@ -64,104 +68,116 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface {
 	 * @see UserInterface
 	 */
 	public function getUserIdentifier(): string {
-		return (string)$this->email;
-	}
+            		return (string)$this->email;
+            	}
 
 	/**
 	 * @see UserInterface
 	 */
 	public function getRoles(): array {
-		$roles = $this->roles;
-		// guarantee every user at least has ROLE_USER
-		$roles[] = 'ROLE_USER';
-
-		return array_unique($roles);
-	}
+            		$roles = $this->roles;
+            		// guarantee every user at least has ROLE_USER
+            		$roles[] = 'ROLE_USER';
+            
+            		return array_unique($roles);
+            	}
 
 	public function setRoles(array $roles): self {
-		$this->roles = $roles;
-
-		return $this;
-	}
+            		$this->roles = $roles;
+            
+            		return $this;
+            	}
 
 	/**
 	 * @see PasswordAuthenticatedUserInterface
 	 */
 	public function getPassword(): string {
-		return $this->password;
-	}
+            		return $this->password;
+            	}
 
 	public function setPassword(string $password): self {
-		$this->password = $password;
-
-		return $this;
-	}
+            		$this->password = $password;
+            
+            		return $this;
+            	}
 
 	/**
 	 * @see UserInterface
 	 */
 	public function eraseCredentials() {
-		// If you store any temporary, sensitive data on the user, clear it here
-		// $this->plainPassword = null;
-	}
+            		// If you store any temporary, sensitive data on the user, clear it here
+            		// $this->plainPassword = null;
+            	}
 
 	public function getFirstName(): ?string {
-		return $this->first_name;
-	}
+            		return $this->first_name;
+            	}
 
 	public function setFirstName(string $first_name): self {
-		$this->first_name = $first_name;
-
-		return $this;
-	}
+            		$this->first_name = $first_name;
+            
+            		return $this;
+            	}
 
 	public function getLastName(): ?string {
-		return $this->last_name;
-	}
+            		return $this->last_name;
+            	}
 
 	public function setLastName(string $last_name): self {
-		$this->last_name = $last_name;
-
-		return $this;
-	}
+            		$this->last_name = $last_name;
+            
+            		return $this;
+            	}
 
 	public function getOrganizationName(): ?string {
-		return $this->organization_name;
-	}
+            		return $this->organization_name;
+            	}
 
 	public function setOrganizationName(?string $organization_name): self {
-		$this->organization_name = $organization_name;
-
-		return $this;
-	}
+            		$this->organization_name = $organization_name;
+            
+            		return $this;
+            	}
 
 	public function getLocation(): ?string {
-		return $this->location;
-	}
+            		return $this->location;
+            	}
 
 	public function setLocation(string $location): self {
-		$this->location = $location;
-
-		return $this;
-	}
+            		$this->location = $location;
+            
+            		return $this;
+            	}
 
 	public function getPhoneNumber(): ?string {
-		return $this->phone_number;
-	}
+            		return $this->phone_number;
+            	}
 
 	public function setPhoneNumber(?string $phone_number): self {
-		$this->phone_number = $phone_number;
-
-		return $this;
-	}
+            		$this->phone_number = $phone_number;
+            
+            		return $this;
+            	}
 
 	public function getUsername(): ?string {
-		return $this->username;
-	}
+            		return $this->username;
+            	}
 
 	public function setUsername(string $username): self {
-		$this->username = $username;
+            		$this->username = $username;
+            
+            		return $this;
+            	}
 
-		return $this;
-	}
+    public function isVerified(): bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
+
+        return $this;
+    }
 }

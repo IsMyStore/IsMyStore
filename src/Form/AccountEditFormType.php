@@ -42,6 +42,8 @@ class AccountEditFormType extends AbstractType {
 				]
 			])
 			->add('location', CountryType::class, [
+				'disabled' => true,
+				'label' => false,
 				'data' => 'FR',
 			])
 			->add('email', EmailType::class, [

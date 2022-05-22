@@ -17,6 +17,9 @@
                         <div class="card-body text-center d-flex flex-column align-items-center">
                             <form method="post">
                                 {{ form_start(registrationForm) }}
+                                <div class="mb-3">
+                                    {{ form_row(registrationForm.username) }}
+                                </div>
                                 <div class="row">
                                     <div class="col">
                                         {{ form_row(registrationForm.firstName) }}
@@ -30,15 +33,17 @@
                                     <div class="col">
                                         {{ form_row(registrationForm.email) }}
                                     </div>
-                                    <div class="col">
-                                        {{ form_row(registrationForm.location) }}
-                                    </div>
                                 </div>
 
                                 <div class="mb-3">
                                     <div class="mb-3">
                                         {{ form_row(registrationForm.plainPassword) }}
                                     </div>
+
+                                    <div class="mb-3">
+                                        {{ form_row(registrationForm.location) }}
+                                    </div>
+
                                     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
                                     <div class="mb-3">
@@ -47,8 +52,10 @@
                                         </button>
                                     </div>
                                     <p class="text-muted">Already have an account?
-                                        &nbsp;<a href="{{ path('app_login') }}">Log in</a></p>
+                                        &nbsp;<a href="{{ path('app_login') }}">Log in</a>
+                                    </p>
                                     {{ form_end(registrationForm) }}
+                                </div>
                             </form>
                         </div>
                     </div>

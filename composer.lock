@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5773e446bcf22bb78f91c761f46f532",
+    "content-hash": "0f281653abd72d85556be32aeec7796c",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1527,16 +1527,16 @@
         },
         {
             "name": "ismystore/checkip",
-            "version": "1.0.1",
+            "version": "dev-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/IsMyStore/CheckIP.git",
-                "reference": "e8579bac9cf68e4bb0fdac2e1119ee02fc9a9324"
+                "reference": "8fe96d9b21b8ee3075204d68e53e5086303f7450"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/IsMyStore/CheckIP/zipball/e8579bac9cf68e4bb0fdac2e1119ee02fc9a9324",
-                "reference": "e8579bac9cf68e4bb0fdac2e1119ee02fc9a9324",
+                "url": "https://api.github.com/repos/IsMyStore/CheckIP/zipball/8fe96d9b21b8ee3075204d68e53e5086303f7450",
+                "reference": "8fe96d9b21b8ee3075204d68e53e5086303f7450",
                 "shasum": ""
             },
             "require": {
@@ -1564,9 +1564,9 @@
             "description": "A composer module to retrieve information from an IP address, using www.geoplugin.net",
             "support": {
                 "issues": "https://github.com/IsMyStore/CheckIP/issues",
-                "source": "https://github.com/IsMyStore/CheckIP/tree/1.0.1"
+                "source": "https://github.com/IsMyStore/CheckIP/tree/dev"
             },
-            "time": "2022-05-22T08:15:38+00:00"
+            "time": "2022-05-22T08:50:00+00:00"
         },
         {
             "name": "laminas/laminas-code",
@@ -7282,6 +7282,55 @@
             "time": "2022-02-23T14:48:27+00:00"
         },
         {
+            "name": "symfonycasts/verify-email-bundle",
+            "version": "v1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SymfonyCasts/verify-email-bundle.git",
+                "reference": "7b9b1f59093dd260afa91eb6b3a220906a0fe0e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SymfonyCasts/verify-email-bundle/zipball/7b9b1f59093dd260afa91eb6b3a220906a0fe0e2",
+                "reference": "7b9b1f59093dd260afa91eb6b3a220906a0fe0e2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/config": "^4.4 | ^5.0 | ^6.0",
+                "symfony/dependency-injection": "^4.4 | ^5.0 | ^6.0",
+                "symfony/deprecation-contracts": "^2.2 | ^3.0",
+                "symfony/http-kernel": "^4.4 | ^5.0 | ^6.0",
+                "symfony/routing": "^4.4 | ^5.0 | ^6.0"
+            },
+            "conflict": {
+                "symfony/framework-bundle": "<4.4"
+            },
+            "require-dev": {
+                "doctrine/orm": "^2.7",
+                "doctrine/persistence": "^2.0",
+                "symfony/framework-bundle": "^4.4 | ^5.0 | ^6.0",
+                "symfony/phpunit-bridge": "^5.0 | ^6.0",
+                "vimeo/psalm": "^4.3"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "SymfonyCasts\\Bundle\\VerifyEmail\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Simple, stylish Email Verification for Symfony",
+            "support": {
+                "issues": "https://github.com/SymfonyCasts/verify-email-bundle/issues",
+                "source": "https://github.com/SymfonyCasts/verify-email-bundle/tree/v1.10.0"
+            },
+            "time": "2022-03-08T22:08:27+00:00"
+        },
+        {
             "name": "twig/extra-bundle",
             "version": "v3.4.0",
             "source": {
@@ -9767,7 +9816,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "ismystore/checkip": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

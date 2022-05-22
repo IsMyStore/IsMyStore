@@ -49,6 +49,14 @@
                 target="__blank">Notifications</a>
             </nav>
             <hr class="mt-0 mb-4">
+            {% if app.user.verified == false %}
+                <div class="alert alert-warning d-flex align-items-center" role="alert">
+                    <div>
+                        <i class="bi bi-exclamation-octagon-fill"></i>
+                        &nbsp;Your account is restricted in functionality, click on the confirmation link in the email sent to your email address
+                    </div>
+                </div>
+            {% endif %}
             <div class="row">
                 {% block body %}{% endblock %}
             </div>

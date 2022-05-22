@@ -29,7 +29,18 @@
                 </li>
             </ul>
             {% if(app.user) %}
-                <a class="btn btn-outline-dark" role="button" style="border-radius: 10px" href="{{ path('app_user_profile') }}">Dashboard</a>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ app.user.username }}
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item disabled" href="#">Store</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{{ path('app_logout') }}">Logout</a></li>
+                    </ul>
+                </div>
             {% else %}
                 <a class="btn {% if current_page is defined and current_page == "login" %}btn-dark{% else %}btn-outline-dark{% endif %}"
                    role="button" style="border-radius: 10px" href="{{ path('app_login') }}">Sign in</a>
