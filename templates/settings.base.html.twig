@@ -38,25 +38,28 @@
             <!-- Account page navigation-->
             <nav class="nav nav-borders">
                 <a class="nav-link {% if current_page is defined and current_page == "profile" %}active{% endif %} ms-0"
-                   href="https://www.bootdey.com/snippets/view/bs5-edit-profile-account-details" target="__blank">Profile</a>
-                <a class="nav-link {% if current_page is defined and current_page == "store" %}active{% endif %}" href="https://www.bootdey.com/snippets/view/bs5-edit-notifications-page"
-                   target="__blank">Store</a>
-                <a class="nav-link {% if current_page is defined and current_page == "billing" %}active{% endif %}" href="https://www.bootdey.com/snippets/view/bs5-profile-billing-page"
-                target="__blank">Billing</a>
-                <a class="nav-link {% if current_page is defined and current_page == "security" %}active{% endif %}" href="https://www.bootdey.com/snippets/view/bs5-profile-security-page"
-                target="__blank">Security</a>
-                <a class="nav-link {% if current_page is defined and current_page == "notifications" %}active{% endif %}" href="https://www.bootdey.com/snippets/view/bs5-edit-notifications-page"
-                target="__blank">Notifications</a>
+                   href="{{ path('app_user_profile') }}">Profile</a>
+                <a class="nav-link {% if current_page is defined and current_page == "store" %}active{% endif %}"
+                   href="{{ path('app_user_store') }}">Store</a>
+                <a class="nav-link {% if current_page is defined and current_page == "billing" %}active{% endif %}"
+                   href="{{ path('app_user_billing') }}">Billing</a>
+                <a class="nav-link {% if current_page is defined and current_page == "security" %}active{% endif %}"
+                   href="{{ path('app_user_security') }}">Security</a>
+                <a class="nav-link {% if current_page is defined and current_page == "notifications" %}active{% endif %}"
+                   href="{{ path('app_user_notifications') }}">Notifications</a>
             </nav>
             <hr class="mt-0 mb-4">
+
             {% if app.user.verified == false %}
                 <div class="alert alert-warning d-flex align-items-center" role="alert">
                     <div>
                         <i class="bi bi-exclamation-octagon-fill"></i>
-                        &nbsp;Your account is restricted in functionality, click on the confirmation link in the email sent to your email address
+                        &nbsp;Your account is restricted in functionality, click on the confirmation link in the email
+                        sent to your email address
                     </div>
                 </div>
             {% endif %}
+
             <div class="row">
                 {% block body %}{% endblock %}
             </div>
