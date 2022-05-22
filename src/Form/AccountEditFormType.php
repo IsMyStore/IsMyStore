@@ -17,42 +17,30 @@ class AccountEditFormType extends AbstractType {
 	public function buildForm(FormBuilderInterface $builder, array $options): void {
 		$builder
 			->add('username', TextType::class, [
+				'disabled' => true,
 				'label' => false,
 				'attr' => [
 					'placeholder' => 'Username'
 				]
 			])
-			->add('first_name', TextType::class, [
+			->add('firstName', TextType::class, [
 				'disabled' => true,
 				'label' => false,
 				'attr' => [
 					'placeholder' => 'John'
 				]
 			])
-			->add('last_name', TextType::class, [
+			->add('lastName', TextType::class, [
 				'disabled' => true,
 				'label' => false,
 				'attr' => [
 					'placeholder' => 'Doe'
 				]
 			])
-			->add('organization_name', TextType::class, [
-				'label' => false,
-				'required' => false,
-				'attr' => [
-					'placeholder' => 'Doe Entreprise'
-				]
-			])
 			->add('location', CountryType::class, [
 				'disabled' => true,
 				'label' => false,
 				'data' => 'FR',
-			])
-			->add('email', EmailType::class, [
-				'label' => false,
-				'attr' => [
-					'placeholder' => 'john@doe.com'
-				]
 			]);
 	}
 

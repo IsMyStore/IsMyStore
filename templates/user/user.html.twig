@@ -3,14 +3,18 @@
 {% block title %}Profile{% endblock %}
 
 {% block body %}
+    <!-- TODO: https://www.youtube.com/watch?v=dvyvikylNmI -->
     <div class="col-xl-3">
         <!-- Profile picture card-->
         <div class="card mb-4 mb-xl-0">
             <div class="card-header">Profile Picture</div>
             <div class="card-body text-center">
-                {{ app.user.avatar }}
+                {{ form_start(profilePictureUploadForm) }}
+                {{ form_row(profilePictureUploadForm.avatar) }}
+                <img class="img-account-profile rounded-circle mb-2" src="{{ asset(app.user.avatar) }}" alt="">
                 <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                <button class="btn btn-primary" type="button">Upload new image</button>
+                <button class="btn btn-primary" type="submit">Upload new image</button>
+                {{ form_end(profilePictureUploadForm) }}
             </div>
         </div>
         <br>
@@ -37,30 +41,18 @@
                     <div class="row gx-3 mb-3">
                         <div class="col-md-6">
                             <label class="small mb-1" for="account_edit_form_first_name">First name</label>
-                            {{ form_row(accountEditionForm.first_name) }}
+                            {{ form_row(accountEditionForm.firstName) }}
                         </div>
                         <div class="col-md-6">
                             <label class="small mb-1" for="account_edit_form_last_name">Last name</label>
-                            {{ form_row(accountEditionForm.last_name) }}
+                            {{ form_row(accountEditionForm.lastName) }}
                         </div>
                     </div>
                     <div class="row gx-3 mb-3">
                         <div class="col-md-6">
-                            <label class="small mb-1" for="account_edit_form_organization_name">Organization name
-                                <abbr style="text-decoration: none" title="What will appear on your invoices">
-                                    <i class="bi bi-info-circle-fill"></i>
-                                </abbr>
-                            </label>
-                            {{ form_row(accountEditionForm.organization_name) }}
-                        </div>
-                        <div class="col-md-6">
                             <label class="small mb-1" for="account_edit_form_location">Location</label>
                             {{ form_row(accountEditionForm.location) }}
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="small mb-1" for="account_edit_form_email">Email address</label>
-                        {{ form_row(accountEditionForm.email) }}
                     </div>
 
                     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
@@ -80,7 +72,7 @@
                     </div>
                     -->
 
-                    <button class="btn btn-primary" type="submit">Save changes</button>
+                    <button class="btn btn-sm btn-primary" type="submit">Save changes</button>
                     {{ form_end(accountEditionForm) }}
                 </form>
             </div>

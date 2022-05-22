@@ -35,9 +35,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface {
 	#[ORM\Column(type: 'string', length: 255, nullable: false)]
 	private $last_name;
 
-	#[ORM\Column(type: 'string', length: 255, nullable: true)]
-	private $organization_name;
-
 	#[ORM\Column(type: 'string', length: 255, nullable: false)]
 	private $location;
 
@@ -131,16 +128,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface {
 		return $this;
 	}
 
-	public function getOrganizationName(): ?string {
-		return $this->organization_name;
-	}
-
-	public function setOrganizationName(?string $organization_name): self {
-		$this->organization_name = $organization_name;
-
-		return $this;
-	}
-
 	public function getLocation(): ?string {
 		return $this->location;
 	}
@@ -181,9 +168,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface {
 		return $this;
 	}
 
-	public function getAvatar() {
-		var_dump(file_exists(__DIR__ . '../../../public/files/avatars/' . $this->getId() . '.jpg'));
-		var_dump(file_exists('/public/files/avatar/9.jpg'));
-		var_dump(file_exists('/files/avatar/9.jpg'));
+	public function getAvatar(): string {
+		if (file_exists(__DIR__ . '../../../public/files/avatars/' . $this->getId() . '.jpg')) {
+			return '/files/avatars/' . $this->getId() . '.jpg';
+		} else {
+			return '/files/avatars/default.jpg';
+		}
 	}
 }

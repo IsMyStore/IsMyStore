@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\AccountEditFormType;
+use App\Form\ProfilePictureUploadFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,13 +17,12 @@ class ProfileController extends AbstractController {
 	public function profile(Request $request, Security $security): Response {
 		$form = $this->createForm(AccountEditFormType::class, $security->getUser());
 		$form->handleRequest($request);
-
-		if($form->isSubmitted() and $form->isValid()){
-			// TODO: handle the form
-		}
+		$form2 = $this->createForm(ProfilePictureUploadFormType::class);
+		$form2->handleRequest($request);
 
 		return $this->render('user/user.html.twig',[
 			"accountEditionForm" => $form->createView(),
+			"profilePictureUploadForm" => $form2->createView(),
 			'current_page' => "profile"
 		]);
 	}
