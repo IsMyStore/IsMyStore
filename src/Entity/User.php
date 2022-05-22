@@ -180,4 +180,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface {
 
         return $this;
     }
+		dump($this->getId());
+		if(file_exists(__DIR__ . '../../../public/files/avatars/'.$this->getId().'.jpg')) {
+			return '/files/avatars/'.$this->getId().'.jpg';
+		} else {
+			return '/files/avatars/default.jpg';
+		}
+	}
 }
