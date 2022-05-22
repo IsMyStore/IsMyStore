@@ -8,6 +8,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
+use function PHPUnit\Framework\fileExists;
+
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
@@ -179,12 +181,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface {
 		return $this;
 	}
 
-	public function getAvatar(): string {
-		dump($this->getId());
-		if(file_exists(__DIR__ . '../../../public/files/avatars/'.$this->getId().'.jpg')) {
-			return '/files/avatars/'.$this->getId().'.jpg';
-		} else {
-			return '/files/avatars/default.jpg';
-		}
+	public function getAvatar() {
+		var_dump(file_exists(__DIR__ . '../../../public/files/avatars/' . $this->getId() . '.jpg'));
+		var_dump(file_exists('/public/files/avatar/9.jpg'));
+		var_dump(file_exists('/files/avatar/9.jpg'));
 	}
 }
