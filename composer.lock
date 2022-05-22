@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f281653abd72d85556be32aeec7796c",
+    "content-hash": "03dcf09f4518c7b9bc7b0b527419df05",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1527,22 +1527,19 @@
         },
         {
             "name": "ismystore/checkip",
-            "version": "dev-dev",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/IsMyStore/CheckIP.git",
-                "reference": "8fe96d9b21b8ee3075204d68e53e5086303f7450"
+                "reference": "ed6a1482f962e7629fc7d5138bb868b92b7cc0ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/IsMyStore/CheckIP/zipball/8fe96d9b21b8ee3075204d68e53e5086303f7450",
-                "reference": "8fe96d9b21b8ee3075204d68e53e5086303f7450",
+                "url": "https://api.github.com/repos/IsMyStore/CheckIP/zipball/ed6a1482f962e7629fc7d5138bb868b92b7cc0ce",
+                "reference": "ed6a1482f962e7629fc7d5138bb868b92b7cc0ce",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1.0"
-            },
-            "suggest": {
                 "php": ">=8.0.0"
             },
             "type": "library",
@@ -1564,9 +1561,9 @@
             "description": "A composer module to retrieve information from an IP address, using www.geoplugin.net",
             "support": {
                 "issues": "https://github.com/IsMyStore/CheckIP/issues",
-                "source": "https://github.com/IsMyStore/CheckIP/tree/dev"
+                "source": "https://github.com/IsMyStore/CheckIP/tree/1.0.2"
             },
-            "time": "2022-05-22T08:50:00+00:00"
+            "time": "2022-05-22T16:26:52+00:00"
         },
         {
             "name": "laminas/laminas-code",
@@ -9816,9 +9813,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "ismystore/checkip": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
