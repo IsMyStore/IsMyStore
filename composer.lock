@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "58c7fda3c9820992c337b1c7ae751624",
+    "content-hash": "c49e68bd4bb3e8f8ed5b89f6fa727f3d",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1524,6 +1524,50 @@
                 }
             ],
             "time": "2022-05-05T09:31:05+00:00"
+        },
+        {
+            "name": "ismystore/checkip",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/IsMyStore/CheckIP.git",
+                "reference": "4a205061651f6881dcfd28fd96a5d5e06aa1b671"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/IsMyStore/CheckIP/zipball/4a205061651f6881dcfd28fd96a5d5e06aa1b671",
+                "reference": "4a205061651f6881dcfd28fd96a5d5e06aa1b671",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "suggest": {
+                "php": ">=8.0.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ismystore\\checkip\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gaëtan H",
+                    "email": "steellgold0@gmail.com"
+                }
+            ],
+            "description": "A composer module to retrieve information from an IP address, using www.geoplugin.net",
+            "support": {
+                "issues": "https://github.com/IsMyStore/CheckIP/issues",
+                "source": "https://github.com/IsMyStore/CheckIP/tree/main"
+            },
+            "time": "2022-05-22T07:32:24+00:00"
         },
         {
             "name": "laminas/laminas-code",
@@ -9724,7 +9768,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "ismystore/checkip": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
