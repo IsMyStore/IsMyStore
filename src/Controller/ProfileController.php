@@ -18,7 +18,7 @@ class ProfileController extends AbstractController {
 		$form->handleRequest($request);
 
 		if($form->isSubmitted() and $form->isValid()){
-			dump("cc");
+			// TODO: handle the form
 		}
 
 		return $this->render('user/user.html.twig',[
@@ -36,9 +36,22 @@ class ProfileController extends AbstractController {
 
 	#[Route(path: '/billing', name: 'app_user_billing')]
 	public function billing(): Response {
-		return $this->render('user/user.html.twig',[
+		return $this->render('user/billing.html.twig',[
 			'current_page' => "billing"
 		]);
 	}
 
+	#[Route(path: '/security', name: 'app_user_security')]
+	public function security(): Response {
+		return $this->render('user/security.html.twig',[
+			'current_page' => "security"
+		]);
+	}
+
+	#[Route(path: '/notifications', name: 'app_user_notifications')]
+	public function notifications(): Response {
+		return $this->render('user/notifications.html.twig',[
+			'current_page' => "notifications"
+		]);
+	}
 }
