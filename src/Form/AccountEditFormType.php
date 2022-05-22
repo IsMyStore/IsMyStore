@@ -23,12 +23,14 @@ class AccountEditFormType extends AbstractType {
 				]
 			])
 			->add('first_name', TextType::class, [
+				'disabled' => true,
 				'label' => false,
 				'attr' => [
 					'placeholder' => 'John'
 				]
 			])
 			->add('last_name', TextType::class, [
+				'disabled' => true,
 				'label' => false,
 				'attr' => [
 					'placeholder' => 'Doe'
