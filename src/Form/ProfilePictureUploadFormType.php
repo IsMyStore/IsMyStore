@@ -8,12 +8,11 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
 
-class ProfilePictureUploadFormType extends AbstractType
-{
-    public function buildForm(FormBuilderInterface $builder, array $options): void
-    {
-        $builder
-            ->add('avatar',FileType::class,[
+class ProfilePictureUploadFormType extends AbstractType {
+
+	public function buildForm(FormBuilderInterface $builder, array $options): void {
+		$builder
+			->add('avatar', FileType::class, [
 				'label' => false,
 				'required' => true,
 				'constraints' => [
@@ -30,14 +29,12 @@ class ProfilePictureUploadFormType extends AbstractType
 				'attr' => [
 					'placeholder' => 'Upload your profile picture'
 				]
-			])
-        ;
-    }
+			]);
+	}
 
-    public function configureOptions(OptionsResolver $resolver): void
-    {
-        $resolver->setDefaults([
+	public function configureOptions(OptionsResolver $resolver): void {
+		$resolver->setDefaults([
 			'data_class' => null
-        ]);
-    }
+		]);
+	}
 }

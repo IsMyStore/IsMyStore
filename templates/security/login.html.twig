@@ -31,17 +31,21 @@
 
                                 <div class="mb-3">
                                     <label for="inputEmail">
-                                        <input type="email" value="{{ last_username }}" name="email" placeholder="Email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                                        <input type="email" value="{{ last_username }}" name="email" placeholder="Email"
+                                               id="inputEmail" class="form-control" autocomplete="email" required
+                                               autofocus>
                                     </label>
                                 </div>
                                 <div class="mb-3">
                                     <label for="inputPassword">
-                                        <input type="password" name="password" placeholder="Password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                                        <input type="password" name="password" placeholder="Password" id="inputPassword"
+                                               class="form-control" autocomplete="current-password" required>
                                     </label>
                                 </div>
                                 <div class="checkbox mb-3">
                                     <label for="rememberme">
-                                        <input class="form-check-input" type="checkbox" id="rememberme" name="_remember_me"> Remember me
+                                        <input class="form-check-input" type="checkbox" id="rememberme"
+                                               name="_remember_me"> Remember me
                                     </label>
                                 </div>
                                 <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">

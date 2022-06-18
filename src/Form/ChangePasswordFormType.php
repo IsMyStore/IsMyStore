@@ -31,7 +31,7 @@ class ChangePasswordFormType extends AbstractType {
 					'label' => false,
 				],
 				'second_options' => [
-					'attr' => ['autocomplete' => 'new-password','placeholder' => 'Repeat password'],
+					'attr' => ['autocomplete' => 'new-password', 'placeholder' => 'Repeat password'],
 					'label' => false,
 				],
 				'invalid_message' => 'The password fields must match.',

@@ -10,22 +10,19 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20220522121151 extends AbstractMigration
-{
-    public function getDescription(): string
-    {
-        return '';
-    }
+final class Version20220522121151 extends AbstractMigration {
 
-    public function up(Schema $schema): void
-    {
-        // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE user DROP display_language');
-    }
+	public function getDescription(): string {
+		return '';
+	}
 
-    public function down(Schema $schema): void
-    {
-        // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE user ADD display_language VARCHAR(255) NOT NULL');
-    }
+	public function up(Schema $schema): void {
+		// this up() migration is auto-generated, please modify it to your needs
+		$this->addSql('ALTER TABLE user DROP display_language');
+	}
+
+	public function down(Schema $schema): void {
+		// this down() migration is auto-generated, please modify it to your needs
+		$this->addSql('ALTER TABLE user ADD display_language VARCHAR(255) NOT NULL');
+	}
 }
