@@ -3,17 +3,28 @@
 {% block title %}Profile{% endblock %}
 
 {% block body %}
-    <!-- TODO: https://www.youtube.com/watch?v=dvyvikylNmI -->
+    <style>
+        .input-file {
+            display: none;
+        }
+    </style>
+
+    <script>
+        // TODO: Remove file from input where user clicks on cancel button
+        // TODO: Merge into database the new avatar when user clicks on save button
+    </script>
+
     <div class="col-xl-3">
         <!-- Profile picture card-->
         <div class="card mb-4 mb-xl-0">
             <div class="card-header">Profile Picture</div>
             <div class="card-body text-center">
                 {{ form_start(profilePictureUploadForm) }}
-                {{ form_row(profilePictureUploadForm.avatar) }}
                 <img class="img-account-profile rounded-circle mb-2" src="{{ asset(app.user.avatar) }}" alt="">
                 <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
-                <button class="btn btn-primary" type="submit">Upload new image</button>
+
+                {{ form_row(profilePictureUploadForm.avatar) }}
+
                 {{ form_end(profilePictureUploadForm) }}
             </div>
         </div>
@@ -78,5 +89,4 @@
             </div>
         </div>
     </div>
-
 {% endblock %}

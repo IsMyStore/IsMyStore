@@ -6,27 +6,18 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\File;
 
 class ProfilePictureUploadFormType extends AbstractType {
 
 	public function buildForm(FormBuilderInterface $builder, array $options): void {
 		$builder
 			->add('avatar', FileType::class, [
-				'label' => false,
+				'label' => 'Choose a profile picture',
+				'label_attr' => ['class' => 'btn btn-sm btn-primary'],
 				'required' => true,
-				'constraints' => [
-					new File([
-						'maxSize' => '1024k',
-						'mimeTypes' => [
-							'image/jpeg',
-							'image/png',
-							'image/gif',
-						],
-						'mimeTypesMessage' => 'Please upload a valid image',
-					])
-				],
 				'attr' => [
+					'accept' => "image/png, image/jpeg",
+					'class' => "input-file",
 					'placeholder' => 'Upload your profile picture'
 				]
 			]);
