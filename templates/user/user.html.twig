@@ -10,8 +10,27 @@
     </style>
 
     <script>
-        // TODO: Remove file from input where user clicks on cancel button
-        // TODO: Merge into database the new avatar when user clicks on save button
+        const originalPath = '{{ app.user.avatar }}';
+
+        function readURL(inputId) {
+            const input = document.getElementById(inputId);
+
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#preview').attr('src', e.target.result);
+                    $('#buttonsSC').removeClass('d-none');
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function cancel() {
+            $('#preview').attr('src', originalPath);
+            $('#buttonsSC').addClass('d-none');
+        }
     </script>
 
     <div class="col-xl-3">
@@ -20,10 +39,24 @@
             <div class="card-header">Profile Picture</div>
             <div class="card-body text-center">
                 {{ form_start(profilePictureUploadForm) }}
-                <img class="img-account-profile rounded-circle mb-2" src="{{ asset(app.user.avatar) }}" alt="">
-                <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                <img class="img-account-profile rounded-circle mb-2" src="{{ asset(app.user.avatar) }}" id="preview"
+                     alt="Preview Image">
+
+                <div class="small font-italic text-muted mb-4">
+                    JPG or PNG no larger than 5 MB
+                </div>
 
                 {{ form_row(profilePictureUploadForm.avatar) }}
+
+                <div class="d-none row" id="buttonsSC">
+                    <div class="col">
+                        <!-- TODO: Save the image with JS for avoid reloading the page with submit type -->
+                        <button class="btn btn-sm btn-success" id="save-button" type="submit">Save</button>
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-sm btn-danger" id="cancel-button" onclick="cancel();">Cancel</button>
+                    </div>
+                </div>
 
                 {{ form_end(profilePictureUploadForm) }}
             </div>
@@ -83,7 +116,7 @@
                     </div>
                     -->
 
-                    <button class="btn btn-sm btn-primary" type="submit">Save changes</button>
+                    <button class="btn btn-sm btn-primary" type="submit">Save</button>
                     {{ form_end(accountEditionForm) }}
                 </form>
             </div>

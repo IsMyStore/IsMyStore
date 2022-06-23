@@ -18,7 +18,8 @@ class ProfilePictureUploadFormType extends AbstractType {
 				'attr' => [
 					'accept' => "image/png, image/jpeg",
 					'class' => "input-file",
-					'placeholder' => 'Upload your profile picture'
+					'placeholder' => 'Upload your profile picture',
+					'onchange' => "readURL('profile_picture_upload_form_avatar');",
 				]
 			]);
 	}
