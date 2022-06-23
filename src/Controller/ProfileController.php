@@ -15,14 +15,18 @@ class ProfileController extends AbstractController {
 
 	#[Route(path: '/', name: 'app_user_profile')]
 	public function profile(Request $request, Security $security): Response {
-		$form = $this->createForm(AccountEditFormType::class, $security->getUser());
-		$form->handleRequest($request);
-		$form2 = $this->createForm(ProfilePictureUploadFormType::class);
-		$form2->handleRequest($request);
+		$accountForm = $this->createForm(AccountEditFormType::class, $security->getUser());
+		$accountForm->handleRequest($request);
+		$avatarForm = $this->createForm(ProfilePictureUploadFormType::class);
+		$avatarForm->handleRequest($request);
+
+		if($avatarForm->isValid() & $avatarForm->isSubmitted()){
+			// move avatar and
+		}
 
 		return $this->render('user/user.html.twig', [
-			"accountEditionForm" => $form->createView(),
-			"profilePictureUploadForm" => $form2->createView(),
+			"accountEditionForm" => $accountForm->createView(),
+			"profilePictureUploadForm" => $avatarForm->createView(),
 			'current_page' => "profile"
 		]);
 	}
