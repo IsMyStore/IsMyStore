@@ -21,7 +21,9 @@ class ProfileController extends AbstractController {
 		$avatarForm->handleRequest($request);
 
 		if($avatarForm->isValid() & $avatarForm->isSubmitted()){
-			// move avatar and
+			// Check if file is an image and is not too big and is extension jpg or png or gif
+			$file = $avatarForm->get('avatar')->getData();
+			dump($file);
 		}
 
 		return $this->render('user/user.html.twig', [
